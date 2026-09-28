@@ -1,91 +1,48 @@
-# Java Full Stack Development Notes
+# Java Full Stack Development --- Placement Notes
 
-## Placement-Focused Notebook
-
-**Scope:** Java, Spring Boot, MySQL, REST API, React.js, AWS and
-Generative AI\
-**Level:** Basic to Advanced\
-**Format:** Theory → Code → Explanation → Placement Notes
+> **Basic → Core → Advanced → Industry → Placement**
+>
+> Short theory, essential code, architecture and interview points.
 
 ------------------------------------------------------------------------
 
-## Page 01 --- Java Introduction
+## 01. Java at a Glance
 
 ### What is Java?
 
-Java is a high-level, object-oriented, class-based programming language
-designed to be portable across operating systems through the Java
-Virtual Machine (JVM).
+Java is a high-level, object-oriented programming language. Java source
+code is compiled into **bytecode**, which runs on the **JVM**.
 
-### Why Java is used in industry
+``` text
+.java  →  javac  →  .class (Bytecode)  →  JVM  →  OS
+```
 
--   Object-oriented programming
--   Platform independence
--   Strong ecosystem
+### JDK vs JRE vs JVM
+
+  Term   Purpose
+  ------ -------------------------------------
+  JDK    Develop + compile Java applications
+  JRE    Runtime environment
+  JVM    Executes Java bytecode
+
+### Key Features
+
+-   Object-oriented
+-   Platform independent
+-   Strongly typed
 -   Automatic memory management
--   Multithreading support
+-   Multithreading
 -   Large enterprise ecosystem
--   Spring and Spring Boot support
--   Strong database and API integration
 
-### Important Java features
+### Placement
 
-  Feature                Meaning
-  ---------------------- ---------------------------------------------------
-  Simple                 Easier syntax than many older languages
-  Object-Oriented        Programs are organised around classes and objects
-  Platform Independent   Bytecode runs on a JVM
-  Robust                 Strong type checking and exception handling
-  Secure                 Runtime and language-level security features
-  Multithreaded          Supports concurrent execution
-  Portable               Same bytecode can run on compatible JVMs
-  High Performance       JIT compilation improves runtime performance
-
-### Java execution flow
-
-``` text
-Java Source Code
-      |
-      v
-   javac
-      |
-      v
-Bytecode (.class)
-      |
-      v
-     JVM
-      |
-      v
-Operating System
-```
-
-### JDK, JRE and JVM
-
-``` text
-JDK
- |
- +-- JRE
-      |
-      +-- JVM
-```
-
--   **JDK:** Tools required to develop and compile Java applications.
--   **JRE:** Runtime environment required to run Java applications.
--   **JVM:** Executes Java bytecode.
-
-### Placement Questions
-
-1.  What is Java?
-2.  Why is Java platform independent?
-3.  Difference between JDK, JRE and JVM.
-4.  What is bytecode?
-5.  What is the role of JVM?
+**Q: Why is Java platform independent?**\
+Because Java compiler generates bytecode and a compatible JVM executes
+that bytecode on different operating systems.
 
 ------------------------------------------------------------------------
 
-## Page 02 --- First Java Program
-
-### Program
+# 02. First Java Program
 
 ``` java
 public class Main {
@@ -96,33 +53,7 @@ public class Main {
 }
 ```
 
-### Explanation
-
-``` java
-public class Main
-```
-
-Creates a class named `Main`.
-
-``` java
-public static void main(String[] args)
-```
-
-This is the standard entry point of a Java application.
-
--   `public` --- JVM can access the method.
--   `static` --- JVM can call it without creating a `Main` object.
--   `void` --- method returns no value.
--   `main` --- recognised entry-point method.
--   `String[] args` --- command-line arguments.
-
-``` java
-System.out.println("Hello, Java!");
-```
-
-Prints text to the console.
-
-### Compile and run
+### Run
 
 ``` bash
 javac Main.java
@@ -135,87 +66,50 @@ java Main
 Hello, Java!
 ```
 
-### Placement Point
+### Remember
 
-The file name should match the public class name:
-
-``` text
-Main.java
-```
-
-for:
-
-``` java
-public class Main
-```
+`main()` is the standard entry point used by the JVM.
 
 ------------------------------------------------------------------------
 
-## Page 03 --- Variables and Data Types
+# 03. Variables and Data Types
 
-### Primitive data types
+### Primitive Types
 
 ``` text
-byte
-short
-int
-long
-float
-double
-char
-boolean
+byte  short  int  long
+float double
+char  boolean
 ```
 
 ### Example
 
 ``` java
-public class Main {
-    public static void main(String[] args) {
-
-        int age = 22;
-        double salary = 25000.50;
-        char grade = 'A';
-        boolean active = true;
-
-        System.out.println(age);
-        System.out.println(salary);
-        System.out.println(grade);
-        System.out.println(active);
-    }
-}
+int age = 22;
+double salary = 25000.50;
+char grade = 'A';
+boolean active = true;
 ```
 
 ### Important
 
--   `int` is commonly used for whole numbers.
--   `long` is used for larger integer values.
--   `double` is commonly used for decimal values.
--   `char` stores one character.
--   `boolean` stores `true` or `false`.
-
-### Placement Questions
-
--   Primitive vs non-primitive data types.
--   What is type casting?
--   What is the difference between `int` and `Integer`?
+``` text
+Primitive       → stores value
+Reference type  → stores reference to an object
+```
 
 ------------------------------------------------------------------------
 
-## Page 04 --- Operators
-
-### Main operator groups
+# 04. Operators
 
 ``` text
-Arithmetic
-Relational
-Logical
-Assignment
-Unary
-Ternary
-Bitwise
+Arithmetic   + - * / %
+Relational   > < >= <= == !=
+Logical      && || !
+Assignment   = += -= *= /=
+Unary        ++ --
+Ternary      condition ? a : b
 ```
-
-### Example
 
 ``` java
 int a = 10;
@@ -223,22 +117,13 @@ int b = 5;
 
 System.out.println(a + b);
 System.out.println(a > b);
-System.out.println(a > 5 && b < 10);
-```
 
-### Ternary
-
-``` java
-int age = 20;
-
-String result = age >= 18 ? "Adult" : "Minor";
-
-System.out.println(result);
+String result = a > b ? "A is greater" : "B is greater";
 ```
 
 ------------------------------------------------------------------------
 
-## Page 05 --- Control Statements
+# 05. Control Flow
 
 ### if-else
 
@@ -255,19 +140,10 @@ if (age >= 18) {
 ### switch
 
 ``` java
-int day = 2;
-
 switch (day) {
-    case 1:
-        System.out.println("Monday");
-        break;
-
-    case 2:
-        System.out.println("Tuesday");
-        break;
-
-    default:
-        System.out.println("Invalid day");
+    case 1 -> System.out.println("Monday");
+    case 2 -> System.out.println("Tuesday");
+    default -> System.out.println("Invalid");
 }
 ```
 
@@ -279,58 +155,42 @@ for (int i = 1; i <= 5; i++) {
 }
 ```
 
-Placement focus:
-
--   `break`
--   `continue`
--   nested loops
--   loop complexity
+**Placement:** Know `break`, `continue`, nested loops and loop
+complexity.
 
 ------------------------------------------------------------------------
 
-## Page 06 --- Methods
+# 06. Methods
 
 ``` java
-public class Calculator {
+static int add(int a, int b) {
+    return a + b;
+}
 
-    static int add(int a, int b) {
-        return a + b;
-    }
-
-    public static void main(String[] args) {
-        int result = add(10, 20);
-        System.out.println(result);
-    }
+public static void main(String[] args) {
+    System.out.println(add(10, 20));
 }
 ```
 
-### Method structure
+### Learn
 
-``` text
-access-modifier return-type methodName(parameters)
-```
-
-### Important concepts
-
--   Parameter
--   Argument
+-   Parameters
 -   Return type
 -   Method overloading
--   Static method
--   Instance method
+-   Static vs instance method
 -   Recursion
 
 ------------------------------------------------------------------------
 
-## Page 07 --- Arrays and Strings
+# 07. Arrays and Strings
 
 ### Array
 
 ``` java
-int[] numbers = {10, 20, 30, 40};
+int[] numbers = {10, 20, 30};
 
-for (int number : numbers) {
-    System.out.println(number);
+for (int n : numbers) {
+    System.out.println(n);
 }
 ```
 
@@ -340,13 +200,13 @@ for (int number : numbers) {
 String name = "Nitish";
 
 System.out.println(name.length());
-System.out.println(name.toUpperCase());
 System.out.println(name.charAt(0));
+System.out.println(name.toUpperCase());
 ```
 
-### Placement focus
+### Placement
 
-Know the difference between:
+Know why `String` is immutable and the difference between:
 
 ``` text
 String
@@ -354,19 +214,9 @@ StringBuilder
 StringBuffer
 ```
 
-Also understand why `String` is immutable.
-
 ------------------------------------------------------------------------
 
-## Page 08 --- OOP: Class and Object
-
-### Class
-
-A class is a blueprint for creating objects.
-
-### Object
-
-An object is an instance of a class.
+# 08. OOP --- Class and Object
 
 ``` java
 class Student {
@@ -379,23 +229,13 @@ class Student {
     }
 }
 
-public class Main {
-
-    public static void main(String[] args) {
-
-        Student student = new Student();
-
-        student.name = "Nitish";
-        student.age = 22;
-
-        student.display();
-    }
-}
+Student s = new Student();
+s.name = "Nitish";
+s.age = 22;
+s.display();
 ```
 
-------------------------------------------------------------------------
-
-## Page 09 --- Four Pillars of OOP
+### Four Pillars
 
 ``` text
 Encapsulation
@@ -404,9 +244,11 @@ Polymorphism
 Abstraction
 ```
 
-### Encapsulation
+------------------------------------------------------------------------
 
-Keep data private and expose controlled methods.
+# 09. Encapsulation
+
+Hide internal data and expose controlled access.
 
 ``` java
 class Account {
@@ -423,7 +265,11 @@ class Account {
 }
 ```
 
-### Inheritance
+**Key:** `private` data + public methods.
+
+------------------------------------------------------------------------
+
+# 10. Inheritance
 
 ``` java
 class Animal {
@@ -439,34 +285,62 @@ class Dog extends Animal {
 }
 ```
 
-### Polymorphism
-
-Compile-time:
-
 ``` text
-Method Overloading
+Dog  ─────extends────→  Animal
 ```
 
-Runtime:
-
-``` text
-Method Overriding
-```
-
-### Abstraction
-
-Implemented mainly using:
-
-``` text
-abstract class
-interface
-```
+**Placement:** Java supports class inheritance but not multiple
+inheritance through classes.
 
 ------------------------------------------------------------------------
 
-## Page 10 --- Constructor, this and super
+# 11. Polymorphism
 
-### Constructor
+### Compile-time
+
+**Method Overloading**
+
+``` java
+int add(int a, int b) { return a + b; }
+double add(double a, double b) { return a + b; }
+```
+
+### Runtime
+
+**Method Overriding**
+
+A child class provides its own implementation of an inherited method.
+
+------------------------------------------------------------------------
+
+# 12. Abstraction
+
+### Abstract class
+
+``` java
+abstract class Vehicle {
+
+    abstract void start();
+
+    void stop() {
+        System.out.println("Stop");
+    }
+}
+```
+
+### Interface
+
+``` java
+interface Payment {
+    void pay();
+}
+```
+
+**Placement:** Know abstract class vs interface.
+
+------------------------------------------------------------------------
+
+# 13. Constructor, this and super
 
 ``` java
 class Student {
@@ -479,23 +353,18 @@ class Student {
 }
 ```
 
-### `this`
+``` text
+this  → current object
+super → parent class
+```
 
-Refers to the current object.
+### Remember
 
-### `super`
-
-Refers to the parent class members.
-
-Placement questions:
-
--   Constructor vs method
--   Default constructor vs parameterised constructor
--   `this` vs `super`
+A constructor initializes an object and has no return type.
 
 ------------------------------------------------------------------------
 
-## Page 11 --- Access Modifiers and Packages
+# 14. Access Modifiers and Packages
 
 ``` text
 private
@@ -504,34 +373,32 @@ protected
 public
 ```
 
-Typical visibility:
-
-  Modifier      Same Class   Same Package         Child Class              Other Package
-  ----------- ------------ -------------- ------------------- --------------------------
-  private              Yes             No                  No                         No
-  default              Yes            Yes   Package dependent                         No
-  protected            Yes            Yes                 Yes   Yes, through inheritance
-  public               Yes            Yes                 Yes                        Yes
-
-### Package
+  Modifier    Visibility
+  ----------- -----------------------
+  private     Same class
+  default     Same package
+  protected   Package + inheritance
+  public      Everywhere
 
 ``` java
 package com.example.service;
 ```
 
-Packages organise related classes and avoid naming conflicts.
+Use packages to organise application code.
 
 ------------------------------------------------------------------------
 
-## Page 12 --- Exception Handling
+# 15. Exception Handling
 
 ``` java
 try {
     int result = 10 / 0;
-} catch (ArithmeticException e) {
-    System.out.println("Cannot divide by zero");
-} finally {
-    System.out.println("Completed");
+}
+catch (ArithmeticException e) {
+    System.out.println("Invalid operation");
+}
+finally {
+    System.out.println("Done");
 }
 ```
 
@@ -545,36 +412,33 @@ throw
 throws
 ```
 
-### Important distinction
+### Placement
 
--   Checked exceptions are checked by the compiler.
--   Unchecked exceptions generally occur at runtime.
--   `throw` explicitly throws an exception.
--   `throws` declares possible exceptions.
+``` text
+Checked Exception    → compiler checks
+Unchecked Exception  → runtime
+throw                → explicitly throw
+throws               → declare exception
+```
 
 ------------------------------------------------------------------------
 
-## Page 13 --- Collections Framework
-
-### Hierarchy
+# 16. Collections Framework
 
 ``` text
 Collection
- |
- +-- List
- |    +-- ArrayList
- |    +-- LinkedList
- |
- +-- Set
-      +-- HashSet
-      +-- LinkedHashSet
-      +-- TreeSet
+├── List
+│   ├── ArrayList
+│   └── LinkedList
+├── Set
+│   ├── HashSet
+│   └── TreeSet
+└── Queue
 
 Map
- |
- +-- HashMap
- +-- LinkedHashMap
- +-- TreeMap
+├── HashMap
+├── LinkedHashMap
+└── TreeMap
 ```
 
 ### ArrayList
@@ -584,52 +448,47 @@ List<String> names = new ArrayList<>();
 
 names.add("Java");
 names.add("Spring");
-names.add("React");
-
-System.out.println(names);
 ```
 
 ### HashMap
 
 ``` java
-Map<Integer, String> students = new HashMap<>();
+Map<Integer, String> users = new HashMap<>();
 
-students.put(101, "Nitish");
-students.put(102, "Rahul");
-
-System.out.println(students.get(101));
+users.put(101, "Nitish");
+System.out.println(users.get(101));
 ```
 
-### Placement focus
-
-Know:
+### Must Know
 
 -   ArrayList vs LinkedList
 -   HashSet vs TreeSet
--   HashMap internal concept
+-   HashMap
 -   Comparable vs Comparator
 -   `equals()` and `hashCode()`
 
 ------------------------------------------------------------------------
 
-## Page 14 --- Generics
+# 17. Generics
+
+Generics provide compile-time type safety.
 
 ``` java
 List<String> names = new ArrayList<>();
 ```
 
-Generics provide compile-time type safety.
+Generic class:
 
 ``` java
 class Box<T> {
 
     private T value;
 
-    public void set(T value) {
+    void set(T value) {
         this.value = value;
     }
 
-    public T get() {
+    T get() {
         return value;
     }
 }
@@ -637,7 +496,7 @@ class Box<T> {
 
 ------------------------------------------------------------------------
 
-## Page 15 --- Java 8+ Features
+# 18. Java 8+ Essentials
 
 ### Lambda
 
@@ -655,79 +514,72 @@ numbers.stream()
        .forEach(System.out::println);
 ```
 
-### Important topics
-
--   Lambda expressions
--   Functional interfaces
--   Stream API
--   Optional
--   Method references
--   Default methods
--   `Predicate`
--   `Function`
--   `Consumer`
--   `Supplier`
-
-Placement focus:
-
-Understand stream operations:
+### Learn
 
 ``` text
-filter
-map
-sorted
-distinct
-limit
-collect
-reduce
-forEach
+Lambda
+Functional Interface
+Stream API
+Optional
+Method Reference
+Predicate
+Function
+Consumer
+Supplier
+```
+
+### Stream Flow
+
+``` text
+Collection
+   ↓
+stream()
+   ↓
+filter / map / sorted
+   ↓
+collect / reduce / forEach
 ```
 
 ------------------------------------------------------------------------
 
-## Page 16 --- Multithreading
+# 19. Multithreading
 
-### Create a thread
+A thread is a lightweight unit of execution.
 
 ``` java
-class MyTask extends Thread {
+class Task extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Task running");
+        System.out.println("Running");
     }
 }
 
-public class Main {
-
-    public static void main(String[] args) {
-
-        MyTask task = new MyTask();
-        task.start();
-    }
-}
+new Task().start();
 ```
 
-### Placement focus
+### Placement
 
--   Thread lifecycle
--   Runnable
--   Synchronization
--   Race condition
--   Deadlock
--   ExecutorService
--   Thread pool
+Know:
+
+``` text
+Thread
+Runnable
+Synchronization
+Race Condition
+Deadlock
+ExecutorService
+Thread Pool
+```
 
 ------------------------------------------------------------------------
 
-## Page 17 --- SQL and MySQL
+# 20. SQL and MySQL
 
-### Basic SQL
+### Create
 
 ``` sql
 CREATE DATABASE company;
-
-USE company;
 
 CREATE TABLE employee (
     id INT PRIMARY KEY,
@@ -751,36 +603,46 @@ DELETE FROM employee
 WHERE id = 1;
 ```
 
-### Placement focus
+### Must Know
 
--   Primary key
--   Foreign key
--   Constraints
--   Joins
--   Group By
--   Having
--   Subqueries
--   Indexes
--   Normalization
--   Transactions
--   ACID
+``` text
+Primary Key
+Foreign Key
+Constraints
+Joins
+GROUP BY
+HAVING
+Subquery
+Index
+Normalization
+Transaction
+ACID
+```
 
 ------------------------------------------------------------------------
 
-## Page 18 --- SQL Joins
+# 21. SQL Joins
 
-### INNER JOIN
+``` text
+             JOIN
+              |
+     +--------+--------+
+     |        |        |
+  INNER     LEFT     RIGHT
+```
 
-Returns matching records.
+### Example
 
 ``` sql
 SELECT e.name, d.name
 FROM employee e
-INNER JOIN department d
+JOIN department d
 ON e.department_id = d.id;
 ```
 
-### Learn these joins
+### Placement
+
+Understand when to use:
 
 ``` text
 INNER JOIN
@@ -792,24 +654,21 @@ CROSS JOIN
 
 ------------------------------------------------------------------------
 
-## Page 19 --- JDBC
+# 22. JDBC
 
-### Flow
+### Architecture
 
 ``` text
-Java Application
-      |
-      v
+Java
+  ↓
 JDBC API
-      |
-      v
+  ↓
 JDBC Driver
-      |
-      v
+  ↓
 MySQL
 ```
 
-### Example
+### Basic flow
 
 ``` java
 Connection con = DriverManager.getConnection(
@@ -822,61 +681,101 @@ PreparedStatement ps =
     con.prepareStatement("SELECT * FROM employee");
 
 ResultSet rs = ps.executeQuery();
-
-while (rs.next()) {
-    System.out.println(rs.getString("name"));
-}
 ```
 
-Placement focus:
+### Must Know
 
--   Connection
--   Statement
--   PreparedStatement
--   ResultSet
--   Transactions
--   SQL injection prevention
+``` text
+Connection
+Statement
+PreparedStatement
+ResultSet
+Transaction
+Connection Pool
+```
+
+**Security:** Prefer `PreparedStatement` over string-concatenated SQL.
 
 ------------------------------------------------------------------------
 
-## Page 20 --- HTML, CSS and JavaScript
+# 23. HTML
 
-### HTML
-
-Learn:
+### Essential Topics
 
 ``` text
+Document Structure
 Semantic HTML
 Forms
 Tables
 Links
 Images
+Audio / Video
 Accessibility
-SEO basics
+SEO Basics
 ```
 
-### CSS
+### Basic
 
-Learn:
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Full Stack</title>
+</head>
+<body>
+    <h1>Hello Java</h1>
+</body>
+</html>
+```
+
+------------------------------------------------------------------------
+
+# 24. CSS
+
+### Core
 
 ``` text
 Selectors
 Box Model
+Display
+Position
 Flexbox
 Grid
-Position
 Responsive Design
 Media Queries
 Transitions
 Animations
 ```
 
-### JavaScript
+### Flexbox
 
-Learn:
+``` css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+### Placement
+
+Know the difference between:
+
+``` text
+margin vs padding
+flexbox vs grid
+relative vs absolute vs fixed vs sticky
+```
+
+------------------------------------------------------------------------
+
+# 25. JavaScript
+
+### Core
 
 ``` text
 Variables
+Data Types
 Functions
 Arrays
 Objects
@@ -889,15 +788,33 @@ Fetch API
 Modules
 ```
 
-Placement focus:
+### API call
 
-Do not stop at syntax. Build small applications.
+``` javascript
+async function getUsers() {
+    const response = await fetch("/api/users");
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+### Advanced
+
+``` text
+Closure
+Scope
+Hoisting
+Prototype
+Event Loop
+Debouncing
+Throttling
+```
 
 ------------------------------------------------------------------------
 
-## Page 21 --- React.js
+# 26. React.js
 
-### Core topics
+### Core
 
 ``` text
 Components
@@ -909,10 +826,9 @@ Forms
 Hooks
 Routing
 API Integration
-Authentication
 ```
 
-### useState
+### State
 
 ``` jsx
 import { useState } from "react";
@@ -927,94 +843,102 @@ function Counter() {
         </button>
     );
 }
-
-export default Counter;
 ```
 
-### Placement focus
+### Must Know
 
-Know:
-
--   Props vs state
--   `useState`
--   `useEffect`
--   Controlled components
--   React Router
--   API calls
--   Component reusability
+``` text
+useState
+useEffect
+useContext
+useRef
+Custom Hooks
+React Router
+Axios / Fetch
+Protected Routes
+```
 
 ------------------------------------------------------------------------
 
-## Page 22 --- Servlet and JSP
+# 27. Servlet and JSP
 
-### Servlet concepts
+### Servlet
+
+``` text
+Request
+   ↓
+Servlet
+   ↓
+Business Logic
+   ↓
+Response
+```
+
+Learn:
 
 -   Servlet lifecycle
--   Request
--   Response
--   GET
--   POST
--   Sessions
+-   GET / POST
+-   Request / Response
+-   Session
 -   Cookies
 -   Filters
 
 ### JSP
 
 -   JSP lifecycle
--   Expression Language
+-   EL
 -   JSTL
--   MVC pattern
+-   MVC
 
-This section is useful for understanding the evolution from traditional
-Java web applications to Spring Boot.
+**Purpose:** Understand traditional Java web development before Spring
+Boot.
 
 ------------------------------------------------------------------------
 
-## Page 23 --- Spring Framework
+# 28. Spring Framework
 
-### Core concepts
+### Core Idea
+
+``` text
+Object creation
+       ↓
+Spring Container
+       ↓
+Dependency Injection
+       ↓
+Application
+```
+
+### Important
 
 ``` text
 IoC
-Dependency Injection
-Beans
+DI
+Bean
 ApplicationContext
 Component Scanning
 Configuration
 ```
 
-### Example
+### Annotations
 
 ``` java
-@Service
-public class UserService {
-
-    public String getUser() {
-        return "Nitish";
-    }
-}
-```
-
-### Important annotations
-
-``` text
 @Component
 @Service
 @Repository
 @Controller
-@Autowired
 @Configuration
 @Bean
 ```
 
 ------------------------------------------------------------------------
 
-## Page 24 --- Spring Boot Introduction
+# 29. Spring Boot
 
-Spring Boot simplifies development of production-oriented Spring
-applications using auto-configuration, starters and embedded servers.
+Spring Boot reduces configuration and provides production-oriented
+defaults.
 
-### Basic application
+### Main class
 
 ``` java
 @SpringBootApplication
@@ -1026,25 +950,32 @@ public class Application {
 }
 ```
 
-### Common project structure
+### Typical structure
 
 ``` text
 src/main/java
-|
-+-- controller
-+-- service
-+-- repository
-+-- entity
-+-- dto
-+-- exception
-+-- config
-|
-+-- Application.java
+├── controller
+├── service
+├── repository
+├── entity
+├── dto
+├── exception
+└── config
 ```
 
 ------------------------------------------------------------------------
 
-## Page 25 --- Spring Boot REST API
+# 30. REST API
+
+### HTTP Methods
+
+``` text
+GET     → Read
+POST    → Create
+PUT     → Replace
+PATCH   → Partial update
+DELETE  → Delete
+```
 
 ### Controller
 
@@ -1055,22 +986,12 @@ public class UserController {
 
     @GetMapping
     public String getUsers() {
-        return "User list";
+        return "Users";
     }
 }
 ```
 
-### HTTP methods
-
-``` text
-GET
-POST
-PUT
-PATCH
-DELETE
-```
-
-### Status codes
+### Status Codes
 
 ``` text
 200 OK
@@ -1081,26 +1002,25 @@ DELETE
 403 Forbidden
 404 Not Found
 409 Conflict
-500 Internal Server Error
+500 Server Error
 ```
 
 ------------------------------------------------------------------------
 
-## Page 26 --- Spring Boot CRUD
+# 31. Spring Boot CRUD Architecture
 
-### Entity
-
-``` java
-@Entity
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
-    private String email;
-}
+``` text
+Client
+  ↓
+Controller
+  ↓
+Service
+  ↓
+Repository
+  ↓
+JPA / Hibernate
+  ↓
+MySQL
 ```
 
 ### Repository
@@ -1125,73 +1045,56 @@ public class UserService {
 }
 ```
 
-### Controller
-
-``` java
-@RestController
-@RequestMapping("/api/users")
-public class UserController {
-
-    private final UserService service;
-
-    public UserController(UserService service) {
-        this.service = service;
-    }
-}
-```
-
-Placement focus:
-
-Understand the flow:
-
-``` text
-Request
-  ↓
-Controller
-  ↓
-Service
-  ↓
-Repository
-  ↓
-Database
-```
+**Placement:** Be able to explain every layer and why it exists.
 
 ------------------------------------------------------------------------
 
-## Page 27 --- JPA and Hibernate
+# 32. JPA and Hibernate
 
-### Important annotations
+### Entity
+
+``` java
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private String email;
+}
+```
+
+### Relationships
 
 ``` text
-@Entity
-@Id
-@GeneratedValue
-@Column
 @OneToOne
 @OneToMany
 @ManyToOne
 @ManyToMany
-@JoinColumn
 ```
 
-### Important concepts
+### Must Know
 
--   ORM
--   Entity lifecycle
--   Lazy loading
--   Eager loading
--   Relationships
--   JPQL
--   Transactions
--   N+1 query problem
+``` text
+ORM
+Entity
+JPQL
+Transactions
+Lazy Loading
+Eager Loading
+N+1 Query Problem
+```
 
 ------------------------------------------------------------------------
 
-## Page 28 --- DTO and Validation
+# 33. DTO and Validation
 
 ### DTO
 
-A DTO separates API request/response models from persistence entities.
+Use DTOs to control API input/output instead of exposing persistence
+entities directly.
 
 ``` java
 public class UserRequest {
@@ -1206,22 +1109,15 @@ public class UserRequest {
 ``` java
 @NotBlank
 @Email
-@Size
 @NotNull
+@Size
 @Min
 @Max
 ```
 
-Placement focus:
-
-Do not expose database entities blindly in every API. Learn DTO-based
-API design.
-
 ------------------------------------------------------------------------
 
-## Page 29 --- Exception Handling
-
-### Global exception handler
+# 34. Global Exception Handling
 
 ``` java
 @RestControllerAdvice
@@ -1229,61 +1125,67 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<String> handle(RuntimeException ex) {
-        return ResponseEntity
-                .badRequest()
+        return ResponseEntity.badRequest()
                 .body(ex.getMessage());
     }
 }
 ```
 
-Benefits:
+### Benefit
 
--   Consistent API responses
--   Cleaner controllers
--   Centralised error handling
+``` text
+Controller
+   ↓
+Exception
+   ↓
+Global Handler
+   ↓
+Consistent API Response
+```
 
 ------------------------------------------------------------------------
 
-## Page 30 --- Spring Security and JWT
+# 35. Spring Security + JWT
 
-### Authentication flow
+### Authentication Flow
 
 ``` text
 Login
   ↓
-Validate Credentials
+Validate User
   ↓
 Generate JWT
   ↓
-Client Stores Token
+Client sends JWT
   ↓
-Client Sends Authorization Header
+Security Filter
   ↓
-Server Validates Token
+Validate Token
   ↓
 Protected API
 ```
 
-### Important topics
+### Learn
 
--   Authentication
--   Authorization
--   Password hashing
--   JWT
--   Roles
--   Permissions
--   CORS
--   CSRF
--   Spring Security filters
+``` text
+Authentication
+Authorization
+Password Hashing
+JWT
+Roles
+Permissions
+CORS
+CSRF
+Security Filter Chain
+```
 
 ------------------------------------------------------------------------
 
-## Page 31 --- Git and GitHub
+# 36. Git and GitHub
 
-### Essential commands
+### Essential Commands
 
 ``` bash
-git init
 git clone <url>
 git status
 git add .
@@ -1291,41 +1193,42 @@ git commit -m "message"
 git push
 git pull
 git branch
-git switch
+git switch -c feature/login
 git merge
 ```
 
-### Professional workflow
+### Professional Flow
 
 ``` text
-Create branch
-    ↓
-Develop
-    ↓
+Branch
+  ↓
+Code
+  ↓
 Test
-    ↓
+  ↓
 Commit
-    ↓
+  ↓
 Push
-    ↓
+  ↓
 Pull Request
-    ↓
-Code Review
-    ↓
+  ↓
+Review
+  ↓
 Merge
 ```
 
 ------------------------------------------------------------------------
 
-## Page 32 --- Maven
+# 37. Maven
 
-### Maven project
+### Structure
 
 ``` text
-pom.xml
-src/main/java
-src/main/resources
-src/test/java
+project/
+├── src/main/java
+├── src/main/resources
+├── src/test/java
+└── pom.xml
 ```
 
 ### Commands
@@ -1335,308 +1238,248 @@ mvn clean
 mvn compile
 mvn test
 mvn package
-mvn install
 ```
 
-### Important `pom.xml` areas
+### `pom.xml`
 
--   Project metadata
--   Dependencies
--   Plugins
--   Build configuration
--   Profiles
-
-------------------------------------------------------------------------
-
-## Page 33 --- AWS Fundamentals
-
-### Cloud models
+Contains:
 
 ``` text
-IaaS
-PaaS
-SaaS
-```
-
-### Important AWS services for a Java developer
-
-``` text
-EC2       -> Application server
-S3        -> Object storage
-RDS       -> Managed relational database
-IAM       -> Identity and access
-VPC       -> Networking
-CloudWatch -> Monitoring
-Route 53  -> DNS
-ELB       -> Load balancing
+Dependencies
+Plugins
+Build Configuration
+Profiles
+Project Metadata
 ```
 
 ------------------------------------------------------------------------
 
-## Page 34 --- Deploy Spring Boot on AWS
+# 38. AWS for Java Developers
 
-### Basic architecture
+### Essential Services
+
+  Service      Use
+  ------------ ---------------------------
+  EC2          Run application/server
+  S3           Store files/objects
+  RDS          Managed relational DB
+  IAM          Users, roles, permissions
+  VPC          Networking
+  CloudWatch   Logs/monitoring
+  Route 53     DNS
+  ELB          Load balancing
+
+### Deployment Architecture
 
 ``` text
 GitHub
-   |
-   v
-Build JAR
-   |
-   v
-AWS EC2
-   |
-   v
+  ↓
+Maven Build
+  ↓
+JAR
+  ↓
+EC2
+  ↓
 Spring Boot
-   |
-   v
-AWS RDS / MySQL
+  ↓
+RDS MySQL
 ```
 
-### Basic commands
+### Build
 
 ``` bash
 mvn clean package
 ```
 
-Run the generated JAR:
+### Run
 
 ``` bash
-java -jar target/application.jar
+java -jar target/app.jar
 ```
 
-### Deployment checklist
-
-``` text
-Build
-Test
-Configure environment variables
-Configure security group
-Deploy JAR
-Start application
-Configure database
-Test API
-Monitor logs
-```
-
-Never commit:
-
-``` text
-passwords
-API keys
-AWS credentials
-JWT secrets
-database credentials
-```
+**Never commit:** AWS keys, passwords, JWT secrets or database
+credentials.
 
 ------------------------------------------------------------------------
 
-## Page 35 --- Generative AI Fundamentals
+# 39. Generative AI
 
-### AI hierarchy
+### AI Stack
 
 ``` text
-Artificial Intelligence
-        |
-        v
+AI
+ ↓
 Machine Learning
-        |
-        v
+ ↓
 Deep Learning
-        |
-        v
+ ↓
 Generative AI
-        |
-        v
-Large Language Models
+ ↓
+LLM
 ```
 
-### Important concepts
+### Core Terms
 
--   LLM
--   Token
--   Context window
--   Prompt
--   Embedding
--   Vector database
--   RAG
--   AI API
--   Tool calling
--   Structured output
+``` text
+Token
+Prompt
+Context Window
+Embedding
+Vector Database
+RAG
+Tool Calling
+Structured Output
+```
 
-------------------------------------------------------------------------
-
-## Page 36 --- GenAI Application Integration
-
-### Full-stack AI architecture
+### Full Stack AI Architecture
 
 ``` text
 React
-  |
-  v
+  ↓
 Spring Boot
-  |
-  v
+  ↓
 AI Provider API
-  |
-  v
+  ↓
 LLM
-  |
-  v
+  ↓
 Response
-  |
-  v
+  ↓
 Spring Boot
-  |
-  v
-React UI
+  ↓
+React
 ```
 
-### Example backend responsibility
+### Important
+
+An AI application is more than an API call. Production applications
+need:
 
 ``` text
-Receive user prompt
-       ↓
-Validate request
-       ↓
-Apply application rules
-       ↓
-Call AI service
-       ↓
-Validate response
-       ↓
-Return structured response
+Validation
+Authentication
+Secret Management
+Rate Limiting
+Error Handling
+Logging
+Cost Control
 ```
-
-### Placement focus
-
-Understand the difference between:
-
-``` text
-Calling an AI API
-        vs
-Building an AI-powered application
-```
-
-A real application should handle authentication, validation, rate
-limits, errors, logging, secrets and cost control.
 
 ------------------------------------------------------------------------
 
-## Page 37 --- Full Stack Architecture
-
-### Standard architecture
+# 40. Full Stack Project Architecture
 
 ``` text
-                  Browser
-                     |
-                     v
-                React.js
-                     |
+                    USER
+                      |
+                      v
+                   React
+                      |
                   HTTP/JSON
-                     |
-                     v
-             Spring Boot API
-                     |
-              Controller
-                     |
-                  Service
-                     |
-                Repository
-                     |
-                 JPA/Hibernate
-                     |
-                     v
-                  MySQL
+                      |
+                      v
+               Spring Boot API
+                      |
+              +-------+-------+
+              |               |
+          Controller       Security
+              |
+            Service
+              |
+          Repository
+              |
+         JPA / Hibernate
+              |
+              v
+            MySQL
+              |
+              v
+             AWS
 ```
 
-### Cloud version
+### Recommended Project Features
+
+``` text
+Authentication
+Authorization
+CRUD
+Validation
+Search
+Pagination
+Sorting
+Filtering
+Exception Handling
+REST API
+React UI
+MySQL
+GitHub
+AWS Deployment
+```
+
+------------------------------------------------------------------------
+
+# 41. Placement Projects
+
+## Project 1 --- Student Management System
+
+**Stack:** React + Spring Boot + MySQL
+
+``` text
+Login
+CRUD
+Search
+Pagination
+Validation
+REST API
+```
+
+## Project 2 --- E-Commerce
 
 ``` text
 User
- |
- v
-React Application
- |
- v
-AWS
- |
- v
-Spring Boot
- |
- v
-RDS MySQL
+Product
+Category
+Cart
+Order
+Admin
+JWT
+REST API
+MySQL
 ```
 
-------------------------------------------------------------------------
-
-## Page 38 --- Placement-Level Projects
-
-### Project 01 --- Student Management System
-
-Features:
-
--   CRUD
--   Search
--   Pagination
--   MySQL
--   Spring Boot
--   React
-
-### Project 02 --- E-Commerce Application
-
-Features:
-
--   Registration
--   Login
--   JWT
--   Products
--   Categories
--   Cart
--   Orders
--   Admin
--   Payment integration concept
--   REST APIs
-
-### Project 03 --- AI-Powered Application
-
-Features:
-
--   User authentication
--   AI chat
--   Prompt handling
--   Chat history
--   Spring Boot API
--   React UI
--   MySQL
--   AI API integration
-
-### Project 04 --- AWS Deployment
-
-Deploy one complete project with:
+## Project 3 --- AI Application
 
 ``` text
 React
+  ↓
 Spring Boot
-MySQL/RDS
-AWS
-GitHub
+  ↓
+AI API
+  ↓
+LLM
+  ↓
+Chat / Content / Q&A
+```
+
+## Project 4 --- AWS Deployment
+
+Deploy one complete project:
+
+``` text
+React + Spring Boot + MySQL/RDS + AWS
 ```
 
 ------------------------------------------------------------------------
 
-## Page 39 --- DSA for Java Placement
+# 42. DSA for Java Placement
 
-### Must-know topics
+### Priority Order
 
 ``` text
 Arrays
 Strings
-HashMap
-HashSet
+HashMap / HashSet
 Linked List
-Stack
-Queue
+Stack / Queue
 Binary Search
 Sorting
 Trees
@@ -1648,167 +1491,161 @@ Greedy
 Dynamic Programming
 ```
 
-### Problem-solving patterns
+### Patterns
 
 ``` text
 Two Pointers
 Sliding Window
 Prefix Sum
 Binary Search
-Fast/Slow Pointer
+Fast / Slow Pointer
 Hashing
 DFS
 BFS
 ```
 
-### Placement rule
-
-Do not only read DSA theory.
-
-For every topic:
+### Practice Method
 
 ``` text
-Understand
-   ↓
-Implement in Java
-   ↓
-Solve Problems
-   ↓
-Analyse Complexity
-   ↓
-Review Mistakes
+Concept
+  ↓
+Java Implementation
+  ↓
+Problem
+  ↓
+Dry Run
+  ↓
+Complexity
+  ↓
+Review
 ```
 
 ------------------------------------------------------------------------
 
-## Page 40 --- Java Interview Quick Revision
+# 43. Interview Quick Revision
 
-### OOP
-
--   Encapsulation
--   Inheritance
--   Polymorphism
--   Abstraction
-
-### Collections
-
--   List
--   Set
--   Map
--   Queue
--   HashMap
--   ArrayList
-
-### Java Core
-
--   String
--   Exception handling
--   Multithreading
--   Java 8
--   JVM
--   Memory
--   Garbage Collection
-
-### Spring Boot
-
--   IoC
--   DI
--   REST
--   JPA
--   Hibernate
--   Validation
--   Exception handling
--   Security
--   JWT
-
-### Database
-
--   SQL
--   Joins
--   Indexes
--   Normalization
--   Transactions
--   ACID
-
-### Project
-
-Be ready to explain:
+## Java
 
 ``` text
-Problem
-Architecture
-Technology
-Database
-APIs
+OOP
+String
+Collections
+Exception Handling
+Java 8+
+Multithreading
+JVM
+Memory
+Garbage Collection
+```
+
+## Spring Boot
+
+``` text
+IoC
+DI
+REST
+JPA
+Hibernate
+DTO
+Validation
+Exception Handling
+Security
+JWT
+```
+
+## SQL
+
+``` text
+Joins
+Indexes
+Normalization
+Transactions
+ACID
+Subqueries
+Query Optimization
+```
+
+## React
+
+``` text
+Components
+Props
+State
+Hooks
+Routing
+API Integration
 Authentication
-Challenges
-Solutions
-Testing
+```
+
+## AWS
+
+``` text
+EC2
+S3
+RDS
+IAM
+VPC
+CloudWatch
 Deployment
 ```
 
 ------------------------------------------------------------------------
 
-# Placement Revision Order
+# 44. Project Explanation Template
 
-When time is limited, revise in this order:
+For every project, prepare these 10 answers:
 
 ``` text
-1. Java + OOP
-2. Collections
-3. Exception Handling
-4. Java 8+
-5. SQL + MySQL
-6. Spring Boot
-7. REST APIs
-8. JPA + Hibernate
-9. Spring Security + JWT
-10. React fundamentals
-11. Git + GitHub
-12. AWS basics
-13. Project architecture
-14. DSA
-15. GenAI integration
+1. What problem does it solve?
+2. Why did you choose this stack?
+3. Explain the architecture.
+4. Explain the database.
+5. Explain important APIs.
+6. Explain authentication.
+7. What was your contribution?
+8. What was the hardest bug?
+9. How did you test it?
+10. How did you deploy it?
 ```
 
 ------------------------------------------------------------------------
 
-# Final Full Stack Skill Map
+# 45. Placement Priority
+
+If preparation time is limited:
 
 ``` text
-JAVA
- |
- +-- OOP
- +-- Collections
- +-- Exception Handling
- +-- Multithreading
- +-- Java 8+
- |
- +-- JDBC
- |
- +-- SQL / MySQL
- |
- +-- Spring
- |
- +-- Spring Boot
- |      |
- |      +-- REST API
- |      +-- JPA
- |      +-- Hibernate
- |      +-- Security
- |      +-- JWT
- |
- +-- React.js
- |
- +-- Git / GitHub
- |
- +-- Maven
- |
- +-- AWS
- |
- +-- GenAI
- |
- +-- Full Stack Projects
+01  Java + OOP
+02  Collections
+03  SQL + MySQL
+04  Spring Boot
+05  REST API
+06  JPA / Hibernate
+07  Spring Security + JWT
+08  React
+09  Git + GitHub
+10  DSA
+11  AWS
+12  GenAI
+13  Projects
+```
+
+### Final Rule
+
+``` text
+Learn
+  ↓
+Write Code
+  ↓
+Solve Problems
+  ↓
+Build Project
+  ↓
+Push to GitHub
+  ↓
+Deploy
+  ↓
+Explain in Interview
 ```
 
 ------------------------------------------------------------------------
@@ -1817,87 +1654,63 @@ JAVA
 
 ``` text
 Java-Full-Stack-Training/
-|
-+-- 01-java-basics/
-+-- 02-oop/
-+-- 03-advanced-java/
-+-- 04-collections/
-+-- 05-exception-handling/
-+-- 06-multithreading/
-+-- 07-java-8-plus/
-+-- 08-sql-mysql/
-+-- 09-jdbc/
-+-- 10-html-css/
-+-- 11-javascript/
-+-- 12-react/
-+-- 13-servlet-jsp/
-+-- 14-spring/
-+-- 15-spring-boot/
-+-- 16-rest-api/
-+-- 17-jpa-hibernate/
-+-- 18-security-jwt/
-+-- 19-git-github/
-+-- 20-maven/
-+-- 21-aws/
-+-- 22-genai/
-+-- 23-full-stack-projects/
-+-- 24-dsa/
-+-- 25-interview-preparation/
-|
-+-- assignments/
-+-- problem-statements/
-+-- screenshots/
-|
-+-- README.md
-+-- .gitignore
+│
+├── 01-java-basics/
+├── 02-oop/
+├── 03-advanced-java/
+├── 04-collections/
+├── 05-exception-handling/
+├── 06-multithreading/
+├── 07-java-8-plus/
+│
+├── 08-sql-mysql/
+├── 09-jdbc/
+│
+├── 10-html-css/
+├── 11-javascript/
+├── 12-react/
+│
+├── 13-servlet-jsp/
+├── 14-spring/
+├── 15-spring-boot/
+├── 16-rest-api/
+├── 17-jpa-hibernate/
+├── 18-security-jwt/
+│
+├── 19-git-github/
+├── 20-maven/
+├── 21-aws/
+├── 22-genai/
+│
+├── 23-projects/
+├── 24-dsa/
+├── 25-interview-preparation/
+│
+├── assignments/
+├── problem-statements/
+├── screenshots/
+└── README.md
 ```
 
 ------------------------------------------------------------------------
 
-# Learning Principle
-
-``` text
-Theory
-  ↓
-Code
-  ↓
-Practice
-  ↓
-Problem Solving
-  ↓
-Project
-  ↓
-GitHub
-  ↓
-Deployment
-  ↓
-Interview
-```
-
-**Goal:** Learn concepts well enough to explain them, implement them in
-Java, use them inside a real application, and discuss the implementation
-in an interview.
-
-------------------------------------------------------------------------
-
-## Author
+# Author
 
 **Nitish Singh**
 
-B.Tech CSE\
-Java Full Stack Development Training
+B.Tech CSE \| Java Full Stack Development
 
-Focus:
+**Core Stack**
 
 ``` text
-Java
-Spring Boot
-React.js
-MySQL
-REST APIs
-AWS
-Generative AI
-DSA
+Java | Spring Boot | React | MySQL
+REST API | Git | AWS | GenAI | DSA
 ```
 
-GitHub: `https://github.com/nitishsde`
+**GitHub:** `https://github.com/nitishsde`
+
+------------------------------------------------------------------------
+
+> **Placement principle:** Don't collect technologies. Build enough
+> understanding to write the code, debug it, explain the design and
+> solve problems with it.
