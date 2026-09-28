@@ -1,0 +1,1225 @@
+# ☕ Java Full Stack Development — Complete Training Notes
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-Full%20Stack-orange?style=for-the-badge&logo=openjdk&logoColor=white">
+  <img src="https://img.shields.io/badge/Spring%20Boot-Backend-green?style=for-the-badge&logo=springboot&logoColor=white">
+  <img src="https://img.shields.io/badge/React-Frontend-blue?style=for-the-badge&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge&logo=mysql&logoColor=white">
+  <img src="https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazonaws&logoColor=white">
+  <img src="https://img.shields.io/badge/GenAI-AI-purple?style=for-the-badge">
+</p>
+
+<p align="center">
+  <b>Basic → Intermediate → Advanced → Industry Level</b>
+</p>
+
+---
+
+# 📖 About This Repository
+
+This repository contains my **Java Full Stack Development training notes, source code, assignments, problem statements, projects and practical implementations**.
+
+The notes are organised like a **digital notebook**, starting from programming fundamentals and gradually moving toward:
+
+- ☕ Core Java
+- 🚀 Advanced Java
+- 🗄️ SQL & MySQL
+- 🔌 JDBC
+- 🌐 Web Development
+- 🌱 Spring Framework
+- 🚀 Spring Boot
+- 🔗 REST APIs
+- 🗃️ Hibernate / JPA
+- ⚛️ React.js
+- ☁️ AWS
+- 🤖 Generative AI
+- 🏗️ Full Stack Projects
+- 💼 Interview Preparation
+
+---
+
+# 🧭 Complete Learning Roadmap
+
+```text
+                    JAVA FULL STACK
+                          │
+        ┌─────────────────┴─────────────────┐
+        │                                   │
+   PROGRAMMING                         WEB DEVELOPMENT
+        │                                   │
+   Core Java                         HTML → CSS → JS
+        │                                   │
+   OOP Concepts                           React
+        │                                   │
+   Collections                              │
+        │                                   │
+   Advanced Java                            │
+        │                                   │
+   JDBC ────────────────┐                   │
+                        ↓                   ↓
+                    MySQL Database
+                        │
+                        ↓
+                    Spring
+                        │
+                        ↓
+                  Spring Boot
+                        │
+                        ↓
+                   REST APIs
+                        │
+                        ↓
+                 JPA / Hibernate
+                        │
+             ┌──────────┴──────────┐
+             ↓                     ↓
+           React                 AWS
+             │                     │
+             └──────────┬──────────┘
+                        ↓
+                   Full Stack
+                   Applications
+                        │
+                        ↓
+                      GenAI
+                        │
+                        ↓
+              AI-Powered Applications
+```
+
+---
+
+# 📚 Table of Contents
+
+1. [Programming Fundamentals](#1--programming-fundamentals)
+2. [Core Java](#2--core-java)
+3. [Object-Oriented Programming](#3--object-oriented-programming)
+4. [Java Advanced Concepts](#4--java-advanced-concepts)
+5. [Collections Framework](#5--collections-framework)
+6. [Exception Handling](#6--exception-handling)
+7. [Multithreading](#7--multithreading)
+8. [Java 8+ Features](#8--java-8-features)
+9. [File Handling](#9--file-handling)
+10. [SQL & MySQL](#10--sql--mysql)
+11. [JDBC](#11--jdbc)
+12. [HTML](#12--html)
+13. [CSS](#13--css)
+14. [JavaScript](#14--javascript)
+15. [Bootstrap](#15--bootstrap)
+16. [React.js](#16--reactjs)
+17. [Servlet & JSP](#17--servlet--jsp)
+18. [Spring Framework](#18--spring-framework)
+19. [Spring Boot](#19--spring-boot)
+20. [REST API Development](#20--rest-api-development)
+21. [Hibernate & JPA](#21--hibernate--jpa)
+22. [Security & Authentication](#22--security--authentication)
+23. [Git & GitHub](#23--git--github)
+24. [Maven](#24--maven)
+25. [AWS](#25--aws)
+26. [Generative AI](#26--generative-ai)
+27. [Full Stack Integration](#27--full-stack-integration)
+28. [Projects](#28--projects)
+29. [DSA & Problem Solving](#29--dsa--problem-solving)
+30. [Interview Preparation](#30--interview-preparation)
+
+---
+
+# 1. 💻 Programming Fundamentals
+
+## 1.1 Programming Basics
+
+- What is Programming?
+- Compiler vs Interpreter
+- Source Code
+- Bytecode
+- Runtime
+- Variables
+- Constants
+- Data Types
+- Operators
+- Expressions
+- Statements
+- Input / Output
+
+### Java Basics
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        int age = 22;
+        String name = "Nitish";
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+```
+
+---
+
+## 1.2 Control Statements
+
+- `if`
+- `if-else`
+- `else-if`
+- Nested `if`
+- `switch`
+- `for`
+- `while`
+- `do-while`
+- `break`
+- `continue`
+
+---
+
+## 1.3 Methods
+
+- Method declaration
+- Parameters
+- Return type
+- Method calling
+- Method overloading
+- Static methods
+- Instance methods
+- Recursion
+
+---
+
+# 2. ☕ Core Java
+
+## 2.1 Java Introduction
+
+- Java history
+- Features of Java
+- JDK
+- JRE
+- JVM
+- Java Architecture
+- Compilation process
+- Bytecode
+- Platform independence
+
+### Java Execution Flow
+
+```text
+.java
+  ↓
+javac
+  ↓
+.class
+  ↓
+JVM
+  ↓
+Machine Code
+```
+
+---
+
+## 2.2 Data Types
+
+### Primitive
+
+```text
+byte
+short
+int
+long
+float
+double
+char
+boolean
+```
+
+### Non-Primitive
+
+```text
+String
+Array
+Class
+Interface
+Object
+Enum
+```
+
+---
+
+# 3. 🧱 Object-Oriented Programming
+
+## 3.1 OOP Fundamentals
+
+- Class
+- Object
+- Constructor
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+
+---
+
+## 3.2 Encapsulation
+
+```java
+class Student {
+
+    private int id;
+    private String name;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+}
+```
+
+---
+
+## 3.3 Inheritance
+
+```java
+class Animal {
+
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+```
+
+---
+
+## 3.4 Polymorphism
+
+### Compile-Time
+
+- Method Overloading
+
+### Runtime
+
+- Method Overriding
+
+---
+
+## 3.5 Abstraction
+
+- Abstract class
+- Abstract method
+- Interface
+- Multiple inheritance using interfaces
+
+---
+
+# 4. 🚀 Advanced Java Concepts
+
+- Packages
+- Access Modifiers
+- Wrapper Classes
+- String
+- StringBuilder
+- StringBuffer
+- Enum
+- Inner Classes
+- Anonymous Classes
+- Object Class
+- `equals()`
+- `hashCode()`
+- `toString()`
+- Generics
+- Annotations
+- Reflection
+- Regular Expressions
+
+---
+
+# 5. 🗂️ Collections Framework
+
+## Collection Hierarchy
+
+```text
+Collection
+│
+├── List
+│   ├── ArrayList
+│   ├── LinkedList
+│   └── Vector
+│
+├── Set
+│   ├── HashSet
+│   ├── LinkedHashSet
+│   └── TreeSet
+│
+└── Queue
+    ├── PriorityQueue
+    └── Deque
+
+Map
+│
+├── HashMap
+├── LinkedHashMap
+├── TreeMap
+└── Hashtable
+```
+
+### Important Topics
+
+- ArrayList
+- LinkedList
+- HashSet
+- TreeSet
+- HashMap
+- TreeMap
+- Iterator
+- Comparable
+- Comparator
+- Generics
+- Collections utility class
+
+---
+
+# 6. ⚠️ Exception Handling
+
+- Exception
+- Error
+- Checked Exception
+- Unchecked Exception
+- `try`
+- `catch`
+- `finally`
+- `throw`
+- `throws`
+- Custom Exception
+
+```java
+try {
+
+    int result = 10 / 0;
+
+} catch (ArithmeticException e) {
+
+    System.out.println("Cannot divide by zero");
+
+}
+```
+
+---
+
+# 7. 🧵 Multithreading
+
+- Process
+- Thread
+- Thread lifecycle
+- Creating threads
+- `Thread` class
+- `Runnable`
+- Synchronization
+- Race condition
+- Deadlock
+- Thread pool
+- ExecutorService
+- Callable
+- Future
+
+---
+
+# 8. ⚡ Java 8+ Features
+
+## Java 8
+
+- Lambda Expressions
+- Functional Interfaces
+- Stream API
+- Optional
+- Method References
+- Default Methods
+- Static Interface Methods
+
+### Example
+
+```java
+List<Integer> numbers = List.of(10, 20, 30, 40);
+
+numbers.stream()
+       .filter(n -> n > 20)
+       .forEach(System.out::println);
+```
+
+---
+
+# 9. 📁 File Handling
+
+- File
+- FileReader
+- FileWriter
+- BufferedReader
+- BufferedWriter
+- InputStream
+- OutputStream
+- Serialization
+- Deserialization
+- NIO
+- `Path`
+- `Files`
+
+---
+
+# 10. 🗄️ SQL & MySQL
+
+## SQL Fundamentals
+
+- Database
+- Table
+- Row
+- Column
+- Primary Key
+- Foreign Key
+- Constraints
+- CRUD
+
+## SQL Commands
+
+```text
+DDL
+ ├── CREATE
+ ├── ALTER
+ ├── DROP
+ └── TRUNCATE
+
+DML
+ ├── INSERT
+ ├── UPDATE
+ └── DELETE
+
+DQL
+ └── SELECT
+
+DCL
+ ├── GRANT
+ └── REVOKE
+
+TCL
+ ├── COMMIT
+ ├── ROLLBACK
+ └── SAVEPOINT
+```
+
+## Advanced SQL
+
+- WHERE
+- ORDER BY
+- GROUP BY
+- HAVING
+- JOIN
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- SELF JOIN
+- Subqueries
+- Aggregate Functions
+- Views
+- Indexes
+- Stored Procedures
+- Functions
+- Triggers
+- Transactions
+- Normalization
+
+---
+
+# 11. 🔌 JDBC
+
+## JDBC Architecture
+
+```text
+Java Application
+       ↓
+JDBC API
+       ↓
+JDBC Driver
+       ↓
+Database
+```
+
+## Topics
+
+- JDBC Architecture
+- Driver
+- Connection
+- Statement
+- PreparedStatement
+- ResultSet
+- CRUD
+- Transactions
+- Batch Processing
+- Connection Pooling
+
+---
+
+# 12. 🌐 HTML
+
+## Fundamentals
+
+- HTML document structure
+- Headings
+- Paragraph
+- Links
+- Images
+- Lists
+- Tables
+- Forms
+- Input types
+- Semantic HTML
+- Audio
+- Video
+- iframe
+- Accessibility basics
+- SEO basics
+
+---
+
+# 13. 🎨 CSS
+
+## Basics
+
+- Selectors
+- Colors
+- Background
+- Borders
+- Margin
+- Padding
+- Box Model
+- Width / Height
+- Position
+- Display
+
+## Intermediate
+
+- Flexbox
+- CSS Grid
+- Media Queries
+- Responsive Design
+- Transitions
+- Transform
+- Animation
+- Pseudo classes
+- Pseudo elements
+
+## Advanced
+
+- CSS Variables
+- `calc()`
+- `clamp()`
+- Container Queries
+- Logical Properties
+- Modern Layout
+- Responsive Components
+- Accessibility
+- Performance
+
+---
+
+# 14. 🟨 JavaScript
+
+## Fundamentals
+
+- Variables
+- Data Types
+- Operators
+- Conditions
+- Loops
+- Functions
+- Arrays
+- Objects
+
+## Intermediate
+
+- DOM
+- Events
+- Event Delegation
+- ES6+
+- Destructuring
+- Spread / Rest
+- Modules
+- Classes
+- Promises
+- Async / Await
+- Fetch API
+- JSON
+- LocalStorage
+- SessionStorage
+
+## Advanced
+
+- Closures
+- Hoisting
+- Scope
+- Prototype
+- Event Loop
+- Call Stack
+- Microtask Queue
+- Debouncing
+- Throttling
+- Error Handling
+
+---
+
+# 15. 🅱️ Bootstrap
+
+- Grid System
+- Containers
+- Rows
+- Columns
+- Buttons
+- Cards
+- Navbar
+- Forms
+- Modal
+- Carousel
+- Alerts
+- Utilities
+- Responsive Design
+
+---
+
+# 16. ⚛️ React.js
+
+## Fundamentals
+
+- React Introduction
+- Vite
+- Components
+- JSX
+- Props
+- State
+- Events
+- Conditional Rendering
+- Lists
+- Forms
+
+## Hooks
+
+- `useState`
+- `useEffect`
+- `useContext`
+- `useReducer`
+- `useRef`
+- Custom Hooks
+
+## Advanced
+
+- React Router
+- API Integration
+- Axios
+- Context API
+- State Management
+- Authentication
+- Protected Routes
+- Error Handling
+- Performance Optimization
+- Code Splitting
+- Lazy Loading
+
+---
+
+# 17. 🌐 Servlet & JSP
+
+## Servlet
+
+- Servlet Architecture
+- Servlet Lifecycle
+- Request
+- Response
+- GET
+- POST
+- Session
+- Cookies
+- Filters
+- Listeners
+
+## JSP
+
+- JSP Lifecycle
+- JSP Tags
+- Expression Language
+- JSTL
+- MVC Architecture
+
+---
+
+# 18. 🌱 Spring Framework
+
+## Core Spring
+
+- Spring Introduction
+- IoC
+- Dependency Injection
+- Bean
+- ApplicationContext
+- Bean Lifecycle
+- Configuration
+- Component Scanning
+
+## Important Annotations
+
+```text
+@Component
+@Service
+@Repository
+@Controller
+@Autowired
+@Configuration
+@Bean
+```
+
+---
+
+# 19. 🚀 Spring Boot
+
+## Fundamentals
+
+- Spring Boot Introduction
+- Spring Initializr
+- Project Structure
+- Starter Dependencies
+- Auto Configuration
+- Application Properties
+- Profiles
+- Embedded Server
+
+## Important Annotations
+
+```text
+@SpringBootApplication
+@RestController
+@RequestMapping
+@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
+@Service
+@Repository
+@Autowired
+```
+
+---
+
+# 20. 🔗 REST API Development
+
+## HTTP Methods
+
+```text
+GET
+POST
+PUT
+PATCH
+DELETE
+```
+
+## HTTP Status Codes
+
+```text
+200 OK
+201 Created
+204 No Content
+
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+409 Conflict
+
+500 Internal Server Error
+```
+
+## REST Topics
+
+- REST architecture
+- API design
+- Request Parameters
+- Path Variables
+- Request Body
+- Response Entity
+- DTO
+- Validation
+- Exception Handling
+- Global Exception Handler
+- Pagination
+- Sorting
+- Filtering
+- API Documentation
+
+---
+
+# 21. 🗃️ Hibernate & JPA
+
+## JPA
+
+- Entity
+- EntityManager
+- Repository
+- Relationships
+- JPQL
+- Transactions
+
+## Relationships
+
+```text
+@OneToOne
+@OneToMany
+@ManyToOne
+@ManyToMany
+```
+
+## Hibernate
+
+- ORM
+- Session
+- Lazy Loading
+- Eager Loading
+- First Level Cache
+- Second Level Cache
+- Fetch Strategies
+
+---
+
+# 22. 🔐 Security & Authentication
+
+## Authentication
+
+```text
+User
+ ↓
+Login
+ ↓
+Credentials
+ ↓
+Authentication
+ ↓
+JWT
+ ↓
+Access Protected API
+```
+
+## Topics
+
+- Authentication
+- Authorization
+- Password Hashing
+- JWT
+- Roles
+- Permissions
+- Spring Security
+- CORS
+- CSRF
+- Secure API design
+
+---
+
+# 23. 🔀 Git & GitHub
+
+## Basic Commands
+
+```bash
+git init
+git clone
+git status
+git add .
+git commit
+git push
+git pull
+git fetch
+git branch
+git checkout
+git switch
+git merge
+```
+
+## Advanced
+
+- Branching strategy
+- Pull Requests
+- Merge Conflicts
+- `.gitignore`
+- Git tags
+- GitHub Issues
+- GitHub Actions
+- CI/CD basics
+
+---
+
+# 24. 📦 Maven
+
+## Topics
+
+- Maven Introduction
+- Project Structure
+- `pom.xml`
+- Dependencies
+- Plugins
+- Lifecycle
+- Build
+- Test
+- Package
+- Install
+
+### Commands
+
+```bash
+mvn clean
+mvn compile
+mvn test
+mvn package
+mvn install
+```
+
+---
+
+# 25. ☁️ AWS
+
+## Cloud Fundamentals
+
+- Cloud Computing
+- IaaS
+- PaaS
+- SaaS
+- Regions
+- Availability Zones
+- IAM
+
+## AWS Services
+
+### Compute
+
+- EC2
+- Lambda
+- Elastic Beanstalk
+
+### Storage
+
+- S3
+
+### Database
+
+- RDS
+
+### Networking
+
+- VPC
+- Security Groups
+- Route 53
+- Load Balancer
+
+### Monitoring
+
+- CloudWatch
+
+### Deployment
+
+```text
+GitHub
+   ↓
+Build
+   ↓
+AWS
+   ↓
+Application Server
+   ↓
+Database
+```
+
+## AWS Java Application Deployment
+
+```text
+React
+  ↓
+Spring Boot REST API
+  ↓
+AWS EC2
+  ↓
+MySQL / RDS
+```
+
+---
+
+# 26. 🤖 Generative AI
+
+## AI Fundamentals
+
+- Artificial Intelligence
+- Machine Learning
+- Deep Learning
+- Generative AI
+- Large Language Models
+- NLP
+- Embeddings
+
+## LLM Concepts
+
+- Tokens
+- Context Window
+- Prompt
+- System Message
+- User Message
+- Temperature
+- Model Parameters
+
+## Prompt Engineering
+
+- Zero-shot prompting
+- Few-shot prompting
+- Role prompting
+- Chain-of-thought concepts
+- Structured output
+- JSON responses
+- Prompt templates
+
+## AI Application Development
+
+```text
+React
+  ↓
+Spring Boot
+  ↓
+AI API
+  ↓
+LLM
+  ↓
+AI Response
+  ↓
+React UI
+```
+
+## Advanced GenAI
+
+- AI API integration
+- Embeddings
+- Vector databases
+- RAG
+- Document Q&A
+- Semantic Search
+- AI Agents
+- Tool Calling
+- Function Calling
+- AI-powered REST APIs
+
+---
+
+# 27. 🏗️ Full Stack Integration
+
+## Standard Architecture
+
+```text
+                USER
+                  │
+                  ↓
+              React.js
+                  │
+             HTTP / JSON
+                  │
+                  ↓
+          Spring Boot REST API
+                  │
+        ┌─────────┴─────────┐
+        ↓                   ↓
+    Service Layer       Security
+        │
+        ↓
+ Repository / JPA
+        │
+        ↓
+      MySQL
+```
+
+## Full Stack Flow
+
+```text
+React UI
+   ↓
+Axios / Fetch
+   ↓
+REST API
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Repository
+   ↓
+Hibernate / JPA
+   ↓
+MySQL
+```
+
+---
+
+# 28. 🚀 Projects
+
+## 🟢 Beginner Projects
+
+- Calculator
+- Student Management System
+- Employee Management System
+- To-Do Application
+- Quiz Application
+- Portfolio Website
+
+## 🟡 Intermediate Projects
+
+- E-Commerce Application
+- Blog Application
+- Library Management System
+- Banking Application
+- Job Portal
+- Expense Tracker
+
+## 🔴 Advanced Projects
+
+### Project 1 — E-Commerce Platform
+
+```text
+React.js
+   ↓
+Spring Boot
+   ↓
+REST API
+   ↓
+JPA / Hibernate
+   ↓
+MySQL
+```
+
+Features:
+
+- User Registration
+- Login
+- JWT Authentication
+- Products
+- Categories
+- Search
+- Cart
+- Orders
+- Admin Dashboard
+
+---
+
+### Project 2 — AI-Powered Application
+
+```text
+React.js
+      ↓
+Spring Boot
+      ↓
+AI API
+      ↓
+LLM
+     
